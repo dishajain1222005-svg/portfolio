@@ -62,9 +62,7 @@ export default function PortraitOrb() {
       <div
         className="animate-spin-slow ring-gradient absolute inset-0 rounded-full p-[3px]"
         aria-hidden="true"
-        style={{
-          filter: 'drop-shadow(0 0 18px rgba(46, 230, 214, 0.35))',
-        }}
+        style={{ filter: 'drop-shadow(0 0 18px rgba(46, 230, 214, 0.35))' }}
       >
         <div className="h-full w-full rounded-full bg-bg" />
       </div>

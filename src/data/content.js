@@ -9,13 +9,13 @@ export const site = {
 
 /** Scene order for navigation, hashes, and progress. */
 export const scenes = [
-  { id: 'hero', label: 'Hero', hash: 'hero' },
-  { id: 'about', label: 'About', hash: 'about' },
-  { id: 'projects', label: 'Projects', hash: 'projects' },
-  { id: 'experience', label: 'Experience', hash: 'experience' },
-  { id: 'skills', label: 'Skills', hash: 'skills' },
-  { id: 'beyond', label: 'Beyond code', hash: 'beyond' },
-  { id: 'contact', label: 'Contact', hash: 'contact' },
+  { id: 'hero',       label: 'Hero',        hash: 'hero' },
+  { id: 'about',      label: 'About',       hash: 'about' },
+  { id: 'experience', label: 'Experience',  hash: 'experience' },
+  { id: 'projects',   label: 'Projects',    hash: 'projects' },
+  { id: 'skills',     label: 'Skills',      hash: 'skills' },
+  { id: 'beyond',     label: 'Beyond code', hash: 'beyond' },
+  { id: 'contact',    label: 'Contact',     hash: 'contact' },
 ]
 
 export const hero = {
@@ -23,7 +23,7 @@ export const hero = {
   roles: [
     'an AI-powered software engineer',
     'a builder of tested, reviewed code',
-    'a creative lead in Rangmanch A theatre society',
+    'a creative head at Rangmanch theatre society',
   ],
   intro:
     'Third-year B.Tech CSE at VIPS-TC, GGSIPU (8.85 CGPA, expected 2028). I direct AI coding assistants, then review, test, and ship what they produce.',
@@ -188,7 +188,7 @@ export const projects = {
 
 export const experience = {
   heading: 'Experience',
-  lead: 'One internship, several shipped wins — milestones along the way.',
+  lead: 'One internship, several shipped wins — click a milestone to explore.',
   items: [
     {
       id: 'keilhq',
@@ -207,38 +207,43 @@ export const experience = {
       milestones: [
         {
           id: 'ship',
-          label: 'Ship & review',
-          period: 'Jun 2026',
+          label: 'Ship & Review',
+          blurb: 'Reviewed changes, fixed feedback, and shipped updates.',
           detail:
             'Shipped full-stack features with an AI coding assistant (React 19, TypeScript, Express 5, PostgreSQL, Socket.IO) and reviewed, tested and debugged them.',
+          icon: 'rocket',
         },
         {
           id: 'summaries',
-          label: 'Meeting summaries',
-          period: 'Jun–Jul 2026',
+          label: 'Meeting Summaries',
+          blurb: 'Converted discussions into clear, concise summaries.',
           detail:
             'Meeting-to-document summaries cut write-ups from about 5–10 minutes to under 5 seconds.',
+          icon: 'document',
         },
         {
           id: 'batch-read',
-          label: 'Batch mark-as-read',
-          period: 'Jul 2026',
+          label: 'Batch Mark-as-Read',
+          blurb: 'Worked on bulk actions for better message management.',
           detail:
             'Batch mark-as-read cut chat HTTP overhead by over 90%.',
+          icon: 'bolt',
         },
         {
           id: 'product',
-          label: 'Product surfaces',
-          period: 'Jul–Aug 2026',
+          label: 'Product Surfaces',
+          blurb: 'Explored and analyzed core product interfaces.',
           detail:
             '@mentions, S3 file manager, and a redesigned Projects home.',
+          icon: 'layers',
         },
         {
           id: 'quality',
-          label: 'Tests & specs',
-          period: 'Aug 2026',
+          label: 'Tests & Specs',
+          blurb: 'Wrote test cases and contributed to feature specifications.',
           detail:
             '11 test suites and a 9-document notification spec.',
+          icon: 'check',
         },
       ],
     },
@@ -333,10 +338,48 @@ export const skills = {
 
 export const beyond = {
   heading: 'Beyond code',
-  role: 'Creative Lead',
-  org: 'Rangmanch A',
-  lead: 'Theatre keeps me sharp where code alone cannot.',
-  body: 'As creative lead in Rangmanch A theatre society, I shape stories for the stage — directing energy, timing, and presence. That work trains the same muscles I use in engineering: clear communication, collaborative leadership, and reading a room.',
+  bridge: 'Visual design and engineering — both are about making complex things clear.',
+  lead: 'The same muscles: clarity, timing, and leading people toward a shared goal.',
+
+  /**
+   * ─────────────────────────────────────────────────────────────
+   * ACTIVITIES — two spotlight cards
+   * Fill in the details you want to show on each card below.
+   * Fields marked [TODO] are placeholders — replace them freely.
+   * ─────────────────────────────────────────────────────────────
+   */
+  activities: [
+    {
+      id: 'rangmanch',
+      role: 'Head of the Creative Department',
+      org: 'Rangmanch',
+      orgFull: 'Rangmanch (Theatre Society)', // [TODO] confirm full society name
+      emoji: '🎭',
+      tagline: 'Design that sets the stage before the curtain rises.',
+      body: 'As creative head, I own the visual identity of the society — designing posters, event graphics, and posts that go out on the society\'s Instagram page. Every piece has to sell the energy of theatre at a glance.',
+      highlights: [
+        // [TODO] Add specific designs, campaigns, or events here
+        // e.g. { id: 'post1', text: 'Designed all creatives for Annual Fest 2026' },
+        // e.g. { id: 'post2', text: 'Grew Instagram engagement with consistent visual theme' },
+      ],
+    },
+    {
+      id: 'advait',
+      role: 'Technical Team Member',
+      org: 'Advait',
+      orgFull: 'Advait (Technical Society)', // [TODO] confirm full society name
+      emoji: '⚙️',
+      tagline: 'Engineering with community.',
+      body: 'Part of the technical society driving workshops, hackathons, and collaborative engineering projects across the college.',
+      highlights: [
+        // [TODO] Add workshops, events, or projects you contributed to here
+        // e.g. { id: 'ws1', text: 'Web Dev bootcamp facilitator, Jan 2026' },
+        // e.g. { id: 'hack1', text: 'Organised internal hackathon, 60 participants' },
+      ],
+    },
+  ],
+
+  // Legacy notes kept for reference — not rendered in the new layout
   notes: [
     {
       id: 'theatre',
@@ -372,4 +415,12 @@ export const contact = {
     linkedin: 'LinkedIn',
   },
   closing: 'Based in Delhi — happy to talk remote or hybrid.',
+  form: {
+    namePlaceholder: 'Your name',
+    emailPlaceholder: 'your@email.com',
+    messagePlaceholder: 'What would you like to talk about?',
+    submitLabel: 'Send message',
+    successMessage: "Message sent! I'll get back to you soon.",
+  },
+  portalBackLabel: 'Back to start',
 }

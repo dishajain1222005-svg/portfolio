@@ -1,50 +1,73 @@
-import { about, scenes } from '../../data/content'
-import PortalButton from '../PortalButton'
+import { about } from '../../data/content'
+import SceneHeader from '../SceneHeader'
 
-export default function AboutScene({ onNext }) {
-  const next = scenes[2]
-
+export default function AboutScene() {
   return (
-    <div className="mx-auto flex min-h-full max-w-5xl flex-col justify-center px-5 py-24 sm:px-8">
-      <p className="font-mono mb-3 text-[12px] tracking-[0.18em] text-violet uppercase">
-        Scene 02
-      </p>
-      <h2
-        data-scene-heading
-        className="text-metallic mb-3 text-[clamp(2.2rem,6vw,3.5rem)] font-semibold tracking-[-0.03em]"
-      >
-        {about.heading}
-      </h2>
-      <p className="font-serif mb-4 text-[clamp(1.25rem,2.6vw,1.75rem)] italic text-silver-bright">
-        {about.theme}
-      </p>
-      <p className="mb-3 max-w-2xl text-[17px] leading-relaxed text-silver">
-        {about.lead}
-      </p>
-      <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-muted">
-        {about.body}
-      </p>
+    <div className="relative h-full w-full overflow-y-auto">
+      <SceneHeader number={2} title={about.heading} />
 
-      <ul
-        className="mb-12 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4"
-        aria-label="Highlights"
+      <div
+        className="mx-auto flex min-h-full max-w-3xl flex-col justify-center px-6 pb-12 sm:px-10"
+        style={{ paddingTop: 'calc(66px + 160px)' }}
       >
-        {about.stats.map((stat) => (
-          <li key={stat.id} className="border-t border-white/12 pt-4">
-            <p className="text-metallic mb-1 text-[clamp(1.75rem,4vw,2.25rem)] font-semibold tracking-[-0.03em] leading-none">
-              {stat.value}
-            </p>
-            <p className="mt-2 text-[15px] font-medium text-silver-bright">
-              {stat.label}
-            </p>
-            <p className="mt-1 text-[13px] leading-snug text-muted">
-              {stat.detail}
-            </p>
-          </li>
-        ))}
-      </ul>
+        {/* Theme line */}
+        <p
+          className="mb-5 font-bold leading-tight"
+          style={{ fontSize: 'clamp(18px, 2.4vw, 26px)', color: '#C4B5FD' }}
+        >
+          {about.theme}
+        </p>
 
-      <PortalButton nextLabel={next.label} onClick={onNext} />
+        {/* Lead + body */}
+        <p
+          className="mb-3 leading-relaxed"
+          style={{ fontSize: 17, color: '#E9D5FF' }}
+        >
+          {about.lead}
+        </p>
+        <p
+          className="mb-10 leading-relaxed"
+          style={{ fontSize: 16, color: '#B9B0E0' }}
+        >
+          {about.body}
+        </p>
+
+        {/* Stats grid */}
+        <ul
+          className="grid grid-cols-2 gap-4 lg:grid-cols-4"
+          aria-label="Highlights"
+        >
+          {about.stats.map((stat) => (
+            <li
+              key={stat.id}
+              className="rounded-2xl px-4 py-5"
+              style={{
+                background: 'rgba(124,92,255,0.08)',
+                border: '1px solid rgba(167,139,250,0.25)',
+              }}
+            >
+              <p
+                className="mb-1 font-bold leading-none"
+                style={{ fontSize: 'clamp(28px,4vw,38px)', color: '#fff' }}
+              >
+                {stat.value}
+              </p>
+              <p
+                className="mt-2 font-semibold"
+                style={{ fontSize: 14, color: '#C4B5FD' }}
+              >
+                {stat.label}
+              </p>
+              <p
+                className="mt-1 leading-snug"
+                style={{ fontSize: 12, color: '#B9B0E0' }}
+              >
+                {stat.detail}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
