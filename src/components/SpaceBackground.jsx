@@ -11,7 +11,7 @@ export default function SpaceBackground() {
     >
       {/* Base image — covers the full viewport, stays fixed while scenes scroll */}
       <img
-        src="/space-bg.png"
+        src={`${import.meta.env.BASE_URL}space-bg.png`}
         alt=""
         className="absolute inset-0 h-full w-full object-cover object-center"
         draggable="false"
